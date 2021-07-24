@@ -32,6 +32,11 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User updateUser(User user) {
+        log.info("Updating user: " + user.getEmail());
+        return userRepository.save(user);
+    }
+
     public void deleteUser(User user) {
         log.info("Removing user: " + user.getEmail());
         userRepository.delete(user);
