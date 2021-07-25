@@ -1,10 +1,9 @@
 package com.cognizant.estock.userservice.domain;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
@@ -16,9 +15,9 @@ public class User {
 
     @Id
     private String email;
-    @NotNull
+    @NotEmpty
     private String firstName;
-    @NotNull
+    @NotEmpty
     private String lastName;
     @NotEmpty
     private String password;

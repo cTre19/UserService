@@ -17,23 +17,23 @@ public class UserController {
 
     public UserController(UserService userService) { this.userService = userService; }
 
-    @GetMapping
-    public ResponseEntity<User> getUser(@RequestBody String email) {
+    @GetMapping("/get/user/{email}")
+    public ResponseEntity<User> getUser(@PathVariable String email) {
         return new ResponseEntity<User>(userService.getUserByEmail(email), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/register/user")
     public ResponseEntity<User> registerNewUser(@RequestBody User user) {
         return new ResponseEntity<User>(userService.register(user), HttpStatus.CREATED);
     }
 
-    @PutMapping
+    @PutMapping("/update/user")
     public ResponseEntity updateUser(@RequestBody User user) {
         return new ResponseEntity<>(userService.updateUser(user), HttpStatus.OK);
     }
 
-    @DeleteMapping
-    public void deleteUser(User user) {
+    @DeleteMapping("/delete/user")
+    public void deleteUser(@RequestBody User user) {
         userService.deleteUser(user);
     }
 }
