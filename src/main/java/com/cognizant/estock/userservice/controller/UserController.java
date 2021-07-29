@@ -7,8 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Objects;
+
 @RestController
-@RequestMapping("/api/v1.0/market/users")
+@RequestMapping("/api/v1.0/market/user")
 @CrossOrigin
 @Slf4j
 public class UserController {
@@ -19,7 +21,18 @@ public class UserController {
 
     @GetMapping("/get/user/{email}")
     public ResponseEntity<User> getUser(@PathVariable String email) {
-        return new ResponseEntity<User>(userService.getUserByEmail(email), HttpStatus.OK);
+        log.info("Fetching user with email: " + email);
+        User fetchedUser = userService.getUserByEmail(email);
+        HttpStatus status;
+
+        if(fetchedUser == null || fetchedUser.getEmail() == null) {
+            log.info("User not found!");
+            status = HttpStatus.NO_CONTENT;
+        } else {
+            status = HttpStatus.OK;
+            log.info("User found");
+        }
+        return new ResponseEntity<User>(fetchedUser, status);
     }
 
     @PostMapping("/register/user")

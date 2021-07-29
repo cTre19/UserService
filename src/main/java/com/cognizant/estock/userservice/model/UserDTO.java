@@ -1,27 +1,22 @@
-package com.cognizant.estock.userservice.domain;
+package com.cognizant.estock.userservice.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotEmpty;
-import java.io.Serializable;
 
-@Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class User implements Serializable {
+public class UserDTO {
 
-    @Id
     private String email;
-    @NotEmpty
     private String firstName;
-    @NotEmpty
     private String lastName;
-    @NotEmpty
     private String password;
-    @NotEmpty
-    private String encryptedPassword;
+    
 }
