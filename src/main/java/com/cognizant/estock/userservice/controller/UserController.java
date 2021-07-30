@@ -1,17 +1,16 @@
 package com.cognizant.estock.userservice.controller;
 
 import com.cognizant.estock.userservice.domain.User;
+import com.cognizant.estock.userservice.model.Credentials;
 import com.cognizant.estock.userservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Objects;
-
 @RestController
 @RequestMapping("/api/v1.0/market/user")
-@CrossOrigin
+@CrossOrigin("*")
 @Slf4j
 public class UserController {
 
@@ -33,6 +32,21 @@ public class UserController {
             log.info("User found");
         }
         return new ResponseEntity<User>(fetchedUser, status);
+    }
+
+    @GetMapping("/login")
+    public ResponseEntity<User> login(@RequestBody Credentials credentials) {
+        User user = userService.login(credentials.getEmail(), credentials.getPassword());
+        HttpStatus status;
+
+        if(user == null) {
+            log.info("User not found!");
+            status = HttpStatus.UNAUTHORIZED;
+        } else {
+            log.info("User successfully logged in!");
+            status = HttpStatus.OK;
+        }
+       return new ResponseEntity(user, status);
     }
 
     @PostMapping("/register/user")

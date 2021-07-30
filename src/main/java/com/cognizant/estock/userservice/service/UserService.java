@@ -22,6 +22,12 @@ public class UserService {
         return userRepository.findById(email).orElseGet(User::new);
     }
 
+    public User login(String email, String password) {
+        log.info("logging in user with email: " + email);
+
+        return userRepository.findByEmailAndPassword(email, password);
+    }
+
     public User register(User user) {
         log.info("Registering new user with id: " + user.getEmail());
         return userRepository.save(user);
