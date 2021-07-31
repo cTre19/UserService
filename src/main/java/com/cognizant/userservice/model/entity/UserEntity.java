@@ -1,4 +1,4 @@
-package com.cognizant.estock.userservice.model.entity;
+package com.cognizant.userservice.model.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;

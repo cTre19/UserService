@@ -1,6 +1,6 @@
-package com.cognizant.estock.userservice.repository;
+package com.cognizant.userservice.repository;
 
-import com.cognizant.estock.userservice.model.entity.UserEntity;
+import com.cognizant.userservice.model.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

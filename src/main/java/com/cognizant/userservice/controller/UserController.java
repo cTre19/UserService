@@ -1,10 +1,9 @@
-package com.cognizant.estock.userservice.controller;
+package com.cognizant.userservice.controller;
 
-import com.cognizant.estock.userservice.model.response.UserDetailsResponse;
-import com.cognizant.estock.userservice.model.Credentials;
-import com.cognizant.estock.userservice.model.request.UserDetailsRequest;
-import com.cognizant.estock.userservice.model.sharedDTO.UserDTO;
-import com.cognizant.estock.userservice.service.UserService;
+import com.cognizant.userservice.model.request.UserDetailsRequest;
+import com.cognizant.userservice.model.response.UserDetailsResponse;
+import com.cognizant.userservice.service.UserService;
+import com.cognizant.userservice.model.sharedDTO.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;

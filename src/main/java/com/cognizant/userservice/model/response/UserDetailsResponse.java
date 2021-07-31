@@ -1,4 +1,4 @@
-package com.cognizant.estock.userservice.model.response;
+package com.cognizant.userservice.model.response;
 
 import lombok.*;
 

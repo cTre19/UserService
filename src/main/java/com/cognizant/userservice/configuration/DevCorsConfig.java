@@ -1,4 +1,4 @@
-package com.cognizant.estock.userservice.configuration;
+package com.cognizant.userservice.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

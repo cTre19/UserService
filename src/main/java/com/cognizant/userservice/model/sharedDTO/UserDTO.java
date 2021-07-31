@@ -1,4 +1,4 @@
-package com.cognizant.estock.userservice.model.sharedDTO;
+package com.cognizant.userservice.model.sharedDTO;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.cognizant.estock.userservice.model.request;
+package com.cognizant.userservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,11 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class UserDetailsRequest {
+public class Credentials {
 
     private String email;
-    private String firstName;
-    private String lastName;
     private String password;
 
 }

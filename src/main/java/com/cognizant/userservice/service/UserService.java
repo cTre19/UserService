@@ -1,8 +1,8 @@
-package com.cognizant.estock.userservice.service;
+package com.cognizant.userservice.service;
 
-import com.cognizant.estock.userservice.model.entity.UserEntity;
-import com.cognizant.estock.userservice.model.sharedDTO.UserDTO;
-import com.cognizant.estock.userservice.repository.UserRepository;
+import com.cognizant.userservice.model.entity.UserEntity;
+import com.cognizant.userservice.model.sharedDTO.UserDTO;
+import com.cognizant.userservice.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
