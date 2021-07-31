@@ -1,11 +1,14 @@
 package com.cognizant.estock.userservice.repository;
 
-import com.cognizant.estock.userservice.domain.User;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import com.cognizant.estock.userservice.model.entity.UserEntity;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, String> {
+public interface UserRepository extends CrudRepository<UserEntity, Long> {
 
-    public User findByEmailAndPassword(String email, String password);
+    UserEntity findUserEntitiesByEmail(String email);
+
+    UserEntity findUserEntitiesByEmailAndEncryptedPassword(String email, String encryptedPassword);
+
 }
