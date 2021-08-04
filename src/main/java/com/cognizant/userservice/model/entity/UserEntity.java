@@ -1,12 +1,16 @@
 package com.cognizant.userservice.model.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
 @Entity
+@Data
 public class UserEntity implements Serializable {
 
     private static final long serialVersionUID = 8720322254581596316L;
