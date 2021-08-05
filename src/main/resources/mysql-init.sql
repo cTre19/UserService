@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS user_db;
-DROP USER IF EXISTS `user`@`%`;
+# DROP DATABASE IF EXISTS user_db;
+# DROP USER IF EXISTS `user2`@`%`;
 CREATE DATABASE IF NOT EXISTS user_db;
-CREATE USER IF NOT EXISTS `user`@`%` IDENTIFIED BY 'password';
-GRANT ALL ON user_db.* TO `user`@`%`;
+CREATE USER IF NOT EXISTS `user2`@`%` IDENTIFIED BY 'password';
+# GRANT ALL ON user_db.* TO `user2`@`%`;
